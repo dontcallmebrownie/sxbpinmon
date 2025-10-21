@@ -1,0 +1,8 @@
+To run in Arduino IDE
+-----------------------
+
+files are in /src
+
+mv ./src [path]/sxbpinmon
+
+[path] :: wherever you want
