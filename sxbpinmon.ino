@@ -10,7 +10,7 @@ TODO:
 
 SIGNAL NOTES:
 
-        Pins availble on J1/XBus02
+        Signals available on J1/XBus02
   --------------------------------------------------------------------------
   +5v/GND pins are flpped on each end of this connector, don't fuck that up.
   --------------------------------------------------------------------------
