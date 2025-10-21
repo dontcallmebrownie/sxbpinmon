@@ -1,6 +1,19 @@
+/*
+  This section is to convert the .ino file to a CPP project for PlatformIO
+
+  TODO:
+    * Instructions here to convert back
+
+
+  NOTES:
+    PlatformIO is weird, before uploading disuconnect serial monitors 
+    or upload will fail with a scary warning about the programmer.
+*/
+#include <Arduino.h>
+
 /********************************************************************************
 
-WDC W65C02SXB Single board computer pin monitor for Arduino Mega 2560.
+      WDC W65C02SXB Single board computer pin monitor for Arduino Mega 2560.
 
 
 TODO: 
@@ -31,9 +44,10 @@ SIGNAL NOTES:
   VSS(GND)           |      P39
   VDD(+5v)           |      P40
 ********************************************************************************/
+
 void setup() {
   Serial.begin(9600);
-  Serial.println("Hellorld\n");
+  Serial.println("testing...\n");
 
 
 }

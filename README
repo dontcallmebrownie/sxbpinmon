@@ -1,8 +1,1 @@
-To run in Arduino IDE
------------------------
-
-files are in /src
-
-mv ./src [path]/sxbpinmon
-
-[path] :: wherever you want
+A project to help me develop documentation and code for the W65C02SXB single board computer by WDC
