@@ -18,10 +18,25 @@
 
 TODO: 
   * Define the board address and data pins
-  * define any other useful pins; PHI, RST, IRQB, etc 
+  * define any other useful pins; PHI2, RES, IRQB, etc 
   * Read Clock Pulses at 8MHz; 125 Nanosecond resolution needed 
 
 SIGNAL NOTES:
+
+
+DATA      | Data lines D0-D7          |   One Byte
+ADDR      | Address lines A0-A25      |   Two Bytes
+VP        | Vector Pull
+IRQ       | Interupt Request
+NMI       | Non-Maskable Interrupt
+RES       | Reset
+ML        | Memory Lock
+SYNC      | Syncronize
+BE        | Bus Enable
+RW        | Read/Write
+PHI2      | Phase 2 In Clock
+
+HARDWARE CONNECTOR NOTES:
 
         Signals available on J1/XBus02
   --------------------------------------------------------------------------
@@ -45,14 +60,25 @@ SIGNAL NOTES:
   VDD(+5v)           |      P40
 ********************************************************************************/
 
+// Pin 38 is PHI2 connected to pin 22 on the mega 
+  uint32_t CLKPin = 22;
+  boolean out = false;
+
 void setup() {
   Serial.begin(9600);
-  Serial.println("testing...\n");
-
+  Serial.println("Clock Pulse Detection Test.\n");
+  pinMode(22, INPUT);
+  
+  
+  
+  
+  delay(3000);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  
+  if(out = digitalRead(CLKPin)) {
+    Serial.println(out);
+  }
 }
