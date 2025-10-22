@@ -62,26 +62,45 @@ HARDWARE CONNECTOR NOTES:
 
 // Pin 38 is PHI2 connected to pin 22 on the mega 2560
   uint32_t CLKPin = 22;
+  uint32_t RESPin = 23;
+
   boolean out = false;
 
+void reset();
+
 void setup() {
-  Serial.begin(9600);
+
+  Serial.begin(115200);
   Serial.println("Clock Pulse Detection Test.\n");
-  pinMode(22, INPUT);
+  pinMode(CLKPin, INPUT);
+  pinMode(RESPin, OUTPUT);
   
+  //    Reset the board before starting
+  Serial.println("Resetting...");
   delay(3000);
+  void reset();
 }
 
 void loop() {
   
-  out = digitalRead(CLKPin);
+  //out = digitalRead(CLKPin); // 3uS(?)
 
-  if(out) {
-    Serial.println(out);
+  if(out = digitalRead(CLKPin)) {
+    Serial.println(out); // 27uS(?)
   }
   else {
-    Serial.println(out);
+    Serial.println(out); // 27uS(?)
   }
 
   out = false;
+}
+
+void reset() {
+
+  boolean res = true;
+  digitalWrite(RESPin, res);
+  delay(250);
+  res = false;
+  digitalWrite(RESPin, res);
+  pinMode(RESPin, INPUT);
 }
