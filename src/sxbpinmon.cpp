@@ -60,7 +60,7 @@ HARDWARE CONNECTOR NOTES:
   VDD(+5v)           |      P40
 ********************************************************************************/
 
-// Pin 38 is PHI2 connected to pin 22 on the mega 
+// Pin 38 is PHI2 connected to pin 22 on the mega 2560
   uint32_t CLKPin = 22;
   boolean out = false;
 
@@ -69,16 +69,19 @@ void setup() {
   Serial.println("Clock Pulse Detection Test.\n");
   pinMode(22, INPUT);
   
-  
-  
-  
   delay(3000);
-
 }
 
 void loop() {
   
-  if(out = digitalRead(CLKPin)) {
+  out = digitalRead(CLKPin);
+
+  if(out) {
     Serial.println(out);
   }
+  else {
+    Serial.println(out);
+  }
+
+  out = false;
 }
